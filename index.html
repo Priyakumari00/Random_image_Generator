@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Image Generator</title>
+</head>
+
+<body>
+    <form id="form">
+        <input type="number" id="width">
+        <input type="number" id="height">
+        <input type="submit" value="Get Image">
+        <hr>
+    </form>
+    <img alt="" id="img">
+
+</body>
+<script>
+    var form = document.getElementById('form')
+
+    form.addEventListener('submit', function (event) {
+        event.preventDefault()
+
+        var width = document.getElementById('width').value
+        var height = document.getElementById('height').value
+
+        var url = `https://picsum.photos/${width}/${height}`
+
+        var image = document.getElementById('img')
+
+        image.src = url
+    })
+</script>
+
+</html>
